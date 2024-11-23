@@ -10,7 +10,7 @@ function App() {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://localhost:5000/chat', {
+      const response = await fetch('http://127.0.0.1:5000/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -19,6 +19,7 @@ function App() {
       });
 
       if (response.ok) {
+        console.log("success!")
         const data = await response.json();
         setResponseText(data.response);
       } else {
